@@ -26,6 +26,19 @@ class ViewModel extends BaseViewModel {
 		this.set("data", formatterData);
 		this.set("norm", norm);
 	}
+
+	updateFromResponse(response) {
+		const data = [];
+
+		response.glycemia.forEach(function(item) {
+			data.push({
+				date: formatDate(new Date(item.time)),
+				value: item.value
+			})
+		});
+
+		this.setData(data);
+	}
 }
 
 class LogItem {
@@ -41,6 +54,20 @@ class LogItem {
 
 		return "list-group-item";
 	}
+}
+
+function formatDate(date) {
+	const monthNames = [
+    "Jan", "Feb", "Mar",
+    "Apr", "May", "Jun", "Jul",
+    "Aug", "Sep", "Oct",
+    "Nov", "Dec"
+  ];
+
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+
+  return `${day} ${monthNames[monthIndex]}`;
 }
 
 module.exports = new ViewModel();

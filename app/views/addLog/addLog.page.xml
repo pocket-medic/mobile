@@ -1,0 +1,18 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" shownModally="shownModally">
+	<StackLayout class="form">
+		<StackLayout class="input-field">
+			<Label text="Measured value" class="label font-weight-bold" />
+			<TextField
+				class="input"
+				id="valueField"
+				keyboardType="number"/>
+			<StackLayout class="hr-light"></StackLayout>
+		</StackLayout>
+
+		<Button
+			class="btn btn-primary"
+			text="Add"
+			tap="submit">
+		</Button>
+	</StackLayout>
+</Page>

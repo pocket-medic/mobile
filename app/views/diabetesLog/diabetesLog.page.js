@@ -1,18 +1,34 @@
 const viewModel = require("./diabetesLog.vm");
 const utils = require("../../misc/utils");
 
+
+
 function onNavigatingTo(args) {
+	const logService = require("../../services/logService");
+
 	viewModel.bindContext(args);
-	viewModel.setData([
-		{ date: "10 Aug", value: 9 },
-		{ date: "12 Aug", value: 12 },
-		{ date: "15 Aug", value: 20 },
-		{ date: "22 Aug", value: 16 },
-		{ date: "23 Aug", value: 14 },
-		{ date: "24 Aug", value: 18 }
-	]);
+
+	logService.getValues()
+	.then(viewModel.updateFromResponse.bind(viewModel));
+}
+
+function goBack(args) {
+	args.object.page.frame.goBack();
+}
+
+function showAddLog(args) {
+	const parent = args.object;
+	const moduleName = `views/addLog/addLog.page`;
+	const context = {};
+
+	parent.showModal(moduleName, {
+		context: context,
+		closeCallback: viewModel.updateFromResponse.bind(viewModel)
+	});
 }
 
 module.exports = {
-	onNavigatingTo: onNavigatingTo
+	onNavigatingTo: onNavigatingTo,
+	goBack: goBack,
+	showAddLog: showAddLog
 };

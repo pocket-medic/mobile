@@ -6,6 +6,9 @@
 >
 	<Page.actionBar>
 		<ActionBar class="action-bar">
+			<NavigationButton
+				android.systemIcon="ic_menu_back"
+				tap="goBack"/>
 			<StackLayout class="action-bar-title" orientation="horizontal">
 				<Label
 					class="fa"
@@ -17,7 +20,7 @@
 		</ActionBar>
 	</Page.actionBar>
 
-	<GridLayout rows="*, *" class="logView">
+	<GridLayout rows="*, *, 60" class="logView">
 		<chart:RadCartesianChart class="m-t-10" row="0">
 			<chart:RadCartesianChart.horizontalAxis>
 				<chart:CategoricalAxis lineHidden="true" labelFitMode="Rotate"/>
@@ -88,5 +91,14 @@
 				</ListView>
 			</StackLayout>
 		</ScrollView>
+
+		<StackLayout row="2">
+			<Button
+				height="50"
+				class="btn btn-primary"
+				text="Add value"
+				tap="showAddLog">
+			</Button>
+		</StackLayout>
 	</GridLayout>
 </Page>
