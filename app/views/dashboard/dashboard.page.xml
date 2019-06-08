@@ -1,0 +1,24 @@
+<Page
+	xmlns="http://schemas.nativescript.org/tns.xsd"
+	navigatingTo="onNavigatingTo"
+	class="page"
+>
+	<Page.actionBar>
+		<ActionBar class="action-bar">
+			<StackLayout class="action-bar-title" orientation="horizontal">
+					<Label
+						class="fa"
+						text="&#xf0f0; "
+					>
+					</Label>
+					<Label text="Pocket Medic"></Label>
+				</StackLayout>
+		</ActionBar>
+	</Page.actionBar>
+
+	<StackLayout class="p-20">
+		<Label text="Tap the btn" class="h1 text-center"/>
+		<Button text="TAP" tap="{{ onTap }}" class="btn btn-primary"/>
+		<Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
+	</StackLayout>
+</Page>
