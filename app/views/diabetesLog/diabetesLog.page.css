@@ -1,0 +1,27 @@
+#valuesList > StackLayout,
+#valuesList ListView {
+	height: 100%;
+}
+
+#valuesList .value {
+	width: 50%;
+	font-weight: bold;
+	font-size: 22;
+}
+
+#valuesList .date {
+	width: 50%;
+	text-align: right;
+}
+
+#valuesList .list-group-item {
+	border-left-width: 10px;
+	border-left-color: #8edf29;
+	background-color: #f8fdf2;
+	margin: 5 0;
+}
+
+#valuesList .list-group-item.bad {
+	border-left-color: #a1151d;
+	background-color: #fdedee;
+}

@@ -17,8 +17,8 @@
 		</ActionBar>
 	</Page.actionBar>
 
-	<StackLayout class="p-20">
-		<chart:RadCartesianChart class="m-t-10" height="250">
+	<GridLayout rows="*, *" class="logView">
+		<chart:RadCartesianChart class="m-t-10" row="0">
 			<chart:RadCartesianChart.horizontalAxis>
 				<chart:CategoricalAxis lineHidden="true" labelFitMode="Rotate"/>
 			</chart:RadCartesianChart.horizontalAxis>
@@ -73,5 +73,20 @@
 
 			</chart:RadCartesianChart.series>
 		</chart:RadCartesianChart>
-	</StackLayout>
+
+		<ScrollView row="1" id="valuesList">
+			<StackLayout>
+				<ListView items="{{ data }}" class="list-group" separatorColor="transparent">
+					<ListView.itemTemplate>
+						<StackLayout>
+							<StackLayout class="{{ classValue }}" orientation="horizontal">
+								<Label text="{{ value + ' mmol/L' }}" class="value"/>
+								<Label text="{{ date }}" class="date" />
+							</StackLayout>
+						</StackLayout>
+					</ListView.itemTemplate>
+				</ListView>
+			</StackLayout>
+		</ScrollView>
+	</GridLayout>
 </Page>
