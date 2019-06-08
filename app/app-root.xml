@@ -1,2 +1,2 @@
-<Frame defaultPage="views/dashboard/dashboard.page">
+<Frame defaultPage="views/dashboard/dashboard.page" id="mainFrame">
 </Frame>

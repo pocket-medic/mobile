@@ -7,13 +7,13 @@
 	<Page.actionBar>
 		<ActionBar class="action-bar">
 			<StackLayout class="action-bar-title" orientation="horizontal">
-					<Label
-						class="fa"
-						text="&#xf0f0; "
-					>
-					</Label>
-					<Label text="Pocket Medic"></Label>
-				</StackLayout>
+				<Label
+					class="fa"
+					text="&#xf0f0; "
+				>
+				</Label>
+				<Label text="Pocket Medic"></Label>
+			</StackLayout>
 		</ActionBar>
 	</Page.actionBar>
 
@@ -21,7 +21,8 @@
 		<StackLayout orientation="horizontal">
 			<D:dashboardItem
 				icon="&#xf02d;"
-				label="Diabetes Log">
+				label="Diabetes Log"
+				tap="showDiabetesLog">
 			</D:dashboardItem>
 
 			<D:dashboardItem

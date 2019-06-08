@@ -1,0 +1,77 @@
+<Page
+	xmlns="http://schemas.nativescript.org/tns.xsd"
+	xmlns:chart="nativescript-ui-chart"
+	navigatingTo="onNavigatingTo"
+	class="page"
+>
+	<Page.actionBar>
+		<ActionBar class="action-bar">
+			<StackLayout class="action-bar-title" orientation="horizontal">
+				<Label
+					class="fa"
+					text="&#xf02d; "
+				>
+				</Label>
+				<Label text="Diabetes Log"></Label>
+			</StackLayout>
+		</ActionBar>
+	</Page.actionBar>
+
+	<StackLayout class="p-20">
+		<chart:RadCartesianChart class="m-t-10" height="250">
+			<chart:RadCartesianChart.horizontalAxis>
+				<chart:CategoricalAxis lineHidden="true" labelFitMode="Rotate"/>
+			</chart:RadCartesianChart.horizontalAxis>
+
+			<chart:RadCartesianChart.verticalAxis>
+				<chart:LinearAxis lineHidden="true"/>
+			</chart:RadCartesianChart.verticalAxis>
+
+			<chart:RadCartesianChart.grid>
+				<chart:RadCartesianChartGrid
+					horizontalLinesVisible="true"
+					verticalLinesVisible="false"
+					horizontalStrokeColor="#e1e3e5"
+					horizontalStrokeWidth="2">
+				</chart:RadCartesianChartGrid>
+			</chart:RadCartesianChart.grid>
+
+			<chart:RadCartesianChart.palettes>
+				<chart:Palette seriesName="norm">
+					<chart:Palette.entries>
+						<chart:PaletteEntry fillColor="rgb(142, 223, 41, 0.5)" strokeColor="#8edf29"/>
+					</chart:Palette.entries>
+				</chart:Palette>
+
+				<chart:Palette seriesName="data">
+					<chart:Palette.entries>
+						<chart:PaletteEntry fillColor="rgba(41,142,223, 0.5)" strokeColor="#298edf"/>
+					</chart:Palette.entries>
+				</chart:Palette>
+				</chart:RadCartesianChart.palettes>
+
+			<chart:RadCartesianChart.legend>
+					<chart:RadLegendView position="Floating" height="100" width="100" offsetOrigin="TopRight"/>
+			</chart:RadCartesianChart.legend>
+
+			<chart:RadCartesianChart.series>
+				<chart:AreaSeries
+					legendTitle="Norm"
+					seriesName="norm"
+					items="{{ norm }}"
+					categoryProperty="date"
+					valueProperty="value">
+				</chart:AreaSeries>
+
+				<chart:AreaSeries
+					legendTitle="Measured"
+					seriesName="data"
+					items="{{ data }}"
+					categoryProperty="date"
+					valueProperty="value">
+				</chart:AreaSeries>
+
+			</chart:RadCartesianChart.series>
+		</chart:RadCartesianChart>
+	</StackLayout>
+</Page>
