@@ -1,0 +1,24 @@
+.dashboardItem {
+	width: 50%;
+	padding: 15;
+}
+
+	.dashboardItem .dashboardBtn {
+		background-color: #e8e8e8;
+		border-color: #bdbdbd;
+		border-width: 1;
+		border-radius: 5;
+		color: #101010;
+		text-align: center;
+		padding: 10 0;
+	}
+
+		.dashboardBtn .fa {
+			font-size: 32;
+			color: #E51C23;
+			margin-bottom: 10;
+		}
+
+		.dashboardBtn .label {
+			font-size: 16;
+		}

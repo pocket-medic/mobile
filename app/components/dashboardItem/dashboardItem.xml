@@ -1,0 +1,6 @@
+<StackLayout class="dashboardItem" loaded="loaded">
+	<StackLayout class="dashboardBtn">
+		<Label class="fa" text="{{ icon }}" />
+		<Label class="label" text="{{ label }}" />
+	</StackLayout>
+</StackLayout>

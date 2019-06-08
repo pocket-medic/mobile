@@ -1,5 +1,6 @@
 <Page
 	xmlns="http://schemas.nativescript.org/tns.xsd"
+	xmlns:D="components/dashboardItem"
 	navigatingTo="onNavigatingTo"
 	class="page"
 >
@@ -16,9 +17,28 @@
 		</ActionBar>
 	</Page.actionBar>
 
-	<StackLayout class="p-20">
-		<Label text="Tap the btn" class="h1 text-center"/>
-		<Button text="TAP" tap="{{ onTap }}" class="btn btn-primary"/>
-		<Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
+	<StackLayout id="dashboard">
+		<StackLayout orientation="horizontal">
+			<D:dashboardItem
+				icon="&#xf02d;"
+				label="Diabetes Log">
+			</D:dashboardItem>
+
+			<D:dashboardItem
+				icon="&#xf21e;"
+				label="Heart Rate Log">
+			</D:dashboardItem>
+		</StackLayout>
+
+		<StackLayout orientation="horizontal">
+			<D:dashboardItem
+				icon="&#xf24e;"
+				label="Weight Log">
+			</D:dashboardItem>
+			<D:dashboardItem
+				icon="&#xf043;"
+				label="Blood Presure Log">
+			</D:dashboardItem>
+		</StackLayout>
 	</StackLayout>
 </Page>
