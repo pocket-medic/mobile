@@ -17,8 +17,20 @@ function toggleDrawer() {
 	drawer.toggleDrawerState();
 }
 
+function onNavigationItemTap(args) {
+	const route = args.object.route;
+
+	if (!route) {
+		drawer.toggleDrawerState();
+		return;
+	}
+
+	utils.showView(route);
+}
+
 module.exports = {
 	onNavigatingTo: onNavigatingTo,
 	showDiabetesLog: showDiabetesLog,
-	toggleDrawer: toggleDrawer
+	toggleDrawer: toggleDrawer,
+	onNavigationItemTap: onNavigationItemTap
 };

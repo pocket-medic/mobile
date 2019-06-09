@@ -1,6 +1,6 @@
 const BaseViewModel = require("../../misc/BaseViewModel");
 
-const NORM = 15;
+const NORM = 5.5;
 const defaultValues = {
 	norm: null,
 	data: null
@@ -28,13 +28,19 @@ class ViewModel extends BaseViewModel {
 	}
 
 	updateFromResponse(response) {
+		if (!response) {
+			// closeCallback is called also when canceling the modal :(
+			return;
+		}
 		const data = [];
 
 		response.glycemia.forEach(function(item) {
-			data.push({
-				date: formatDate(new Date(item.time)),
-				value: item.value
-			})
+			if (item && item.value) {
+				data.push({
+					date: formatDate(new Date(item.time)),
+					value: item.value
+				})
+			}
 		});
 
 		this.setData(data);

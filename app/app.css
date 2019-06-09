@@ -29,3 +29,7 @@ ActionBar .action-bar-title {
 .logView {
 	padding: 10;
 }
+
+.input-field Label.label {
+	font-size: 22;
+}

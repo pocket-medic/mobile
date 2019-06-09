@@ -24,6 +24,25 @@ class BaseViewModel extends Observable {
 		return "collapse";
 	}
 
+	toObject() {
+		const result = Object.assign({}, this);
+
+		delete result._observers;
+		delete result.modelDefaults;
+
+		return result;
+	}
+
+	fromObject(source) {
+		const validProps = Object.keys(this.modelDefaults);
+
+		for (let prop in source) {
+			if (validProps.indexOf(prop) !== -1) {
+				this.set(prop, source[prop]);
+			}
+		}
+	}
+
 	bindContext(args) {
 		 args.object.bindingContext = this;
 	}

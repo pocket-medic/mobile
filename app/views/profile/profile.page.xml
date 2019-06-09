@@ -1,0 +1,125 @@
+<Page
+	xmlns="http://www.nativescript.org/tns.xsd"
+	navigatingTo="onNavigatingTo"
+	class="page">
+
+	<Page.actionBar>
+		<ActionBar class="action-bar">
+			<NavigationButton
+				android.systemIcon="ic_menu_back"
+				tap="goBack"/>
+			<StackLayout class="action-bar-title" orientation="horizontal">
+				<Label
+					class="fa"
+					text="&#xf2c1; "
+				>
+				</Label>
+				<Label text="Medical Profile"></Label>
+			</StackLayout>
+		</ActionBar>
+	</Page.actionBar>
+
+	<ScrollView>
+		<StackLayout class="form">
+			<StackLayout class="input-field">
+				<Label text="Birthday" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ dob }}"
+					keyboardType="datetime"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="Gender" class="label font-weight-bold" />
+
+				<SegmentedBar class="m-5" selectedIndex="{{ sex }}">
+					<SegmentedBar.items>
+						<SegmentedBarItem title="Male" />
+						<SegmentedBarItem title="Female" />
+					</SegmentedBar.items>
+				</SegmentedBar>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="Weight" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ weight }}"
+					keyboardType="number"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="Height" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ height }}"
+					keyboardType="number"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="Waist Size" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ waist }}"
+					keyboardType="number"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="Triglyceride" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ triglyceride }}"
+					keyboardType="number"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="HDL Cholesterol" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ hdlCholesterol }}"
+					keyboardType="number"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="Blood Presure" class="label font-weight-bold" />
+				<TextField
+					class="input"
+					id="valueField"
+					text="{{ systolicBloodPressure }}"
+					keyboardType="number"/>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<Label text="History of Cardio Incidents" class="label font-weight-bold" />
+
+				<SegmentedBar class="m-5" selectedIndex="{{ familyHistoryOfCardioIncident }}">
+					<SegmentedBar.items>
+						<SegmentedBarItem title="No" />
+						<SegmentedBarItem title="Yes" />
+					</SegmentedBar.items>
+				</SegmentedBar>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<Button
+				class="btn btn-primary"
+				text="Save"
+				tap="submit">
+			</Button>
+		</StackLayout>
+	</ScrollView>
+</Page>
