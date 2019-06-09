@@ -31,7 +31,12 @@ class ViewModel extends BaseViewModel {
 
 	fromObject(source) {
 		const dob = new Date(source.dob);
-		source.dob = `${dob.getFullYear()}/${dob.getMonth() + 1}/${dob.getDate()}`;
+
+		source.dob = `${dob.getDate()}/${dob.getMonth() + 1}/${dob.getFullYear()}`;
+		source.sex = source.sex === "m" ? 0 : 1;
+		source.familyHistoryOfCardioIncident = source.familyHistoryOfCardioIncident ? 1 : 0;
+
+		super.fromObject(source);
 	}
 }
 

@@ -1,7 +1,12 @@
 const viewModel = require("./profile.vm");
 
 function onNavigatingTo(args) {
+	const logService = require("../../services/logService");
+
 	viewModel.bindContext(args);
+
+	logService.getValues()
+	.then(viewModel.fromObject.bind(viewModel));
 }
 
 function submit(args) {
