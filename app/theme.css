@@ -227,3 +227,7 @@ background-color: #fafeff;
 .sidedrawer-list-item.active {
 color: #000000;
 }
+
+.sidedrawer-list-item.selected Label {
+  color: #e2202b;
+}

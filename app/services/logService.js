@@ -10,7 +10,7 @@ class LogService {
 
   getValues() {
     return http.get({
-      url: "/patient/5cfc1360699209266fa8d2b3"
+      url: "/patient/5cfca345f15f4c2e600c7a89"
     });
   }
 }

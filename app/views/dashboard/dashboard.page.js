@@ -1,15 +1,24 @@
 const viewModel = require("./dashboard.vm");
 const utils = require("../../misc/utils");
+const view = require("ui/core/view");
+
+let drawer;
 
 function onNavigatingTo(args) {
 	viewModel.bindContext(args);
+	drawer = view.getViewById(args.object, "sideDrawer");
 }
 
 function showDiabetesLog() {
 	utils.showView("diabetesLog");
 }
 
+function toggleDrawer() {
+	drawer.toggleDrawerState();
+}
+
 module.exports = {
 	onNavigatingTo: onNavigatingTo,
-	showDiabetesLog: showDiabetesLog
+	showDiabetesLog: showDiabetesLog,
+	toggleDrawer: toggleDrawer
 };

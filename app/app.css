@@ -17,7 +17,14 @@ ActionBar .action-bar-title {
 
   .action-bar-title Label.fa {
     font-size: 26;
+    margin-right: 0;
   }
+
+  ActionBar .fa {
+		color: #fff;
+		font-size: 22;
+		margin-right: 20;
+	}
 
 .logView {
 	padding: 10;
